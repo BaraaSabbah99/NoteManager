@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+  My notes 
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<h1>My notes</h1>
+<br><br>
+{% for note in notes %}
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">{{note.title}}</h5>
+    <p class="card-text">{{note.content}}</p>
+    <p class="card-text"> createdTime : {{note.createdTime}}</p>
+    <a href="/notes/deleteNote/{{note.id}}" class="btn btn-primary" onclick="return confirm('Are you sure you want delete this note ??')">Delete My Note </a>
+  </div>
+</div>
+
+{% endfor %}
+
+{% endblock %}

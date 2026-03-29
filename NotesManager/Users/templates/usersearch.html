@@ -1,0 +1,24 @@
+{% extends 'base.html '%}
+
+
+{% block title %}
+
+Admin dashbored 
+
+{% endblock %}
+
+
+
+{% block content %}
+
+<h1>User</h1>
+
+
+<div class="card" id="cards">
+    <h5 class="card-title">Username : {{usersearch.username}}</h5>
+    <a href="/users/admin/deleteuser/{{usersearch.id}}" class="btn btn-danger" onclick="return confirm('Are you sure to delete this user ?? ')">Delete User</a>
+  </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base.html '%}
+
+
+{% block title %}
+
+Admin dashbored 
+
+{% endblock %}
+
+
+
+{% block content %}
+
+<h1>Users</h1>
+
+<form action="/users/admin/search/">
+
+    Search : <input type="text" name="name" >
+    <input type="submit" name="search" value="search" class="btn btn-primary">
+
+
+</form>
+
+<br><br><br>
+
+{% if users %}
+{% for user in users %}
+
+
+<div class="card">
+    <h5 class="card-title">Username : {{user.username}}</h5>
+    <h5 class="card-title">role : {{user.role}}</h5>
+    <a href="/users/admin/deleteuser/{{user.id}}" class="btn btn-danger" onclick="return confirm('Are you sure to delete this user ?? ')">Delete User</a>
+  </div>
+</div>
+<br><br>
+
+
+{% endfor %}
+
+{% endif %}
+{% endblock %}
